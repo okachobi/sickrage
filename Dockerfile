@@ -14,17 +14,20 @@ usermod -g 100 nobody && \
 
 add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" && \
 add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" && \
+add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ utopic main restricted" && \
+add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ vivid main restricted" && \
 apt-get update -q && \
 
-# Install Dependencies
-apt-get install -qy python python-cheetah ca-certificates wget unrar unzip && \
+# Install Dependencies - pull Python 2.7.9 from vivid APT repo
+apt-get -t vivid install -qy python2.7 python-cheetah && \
+apt-get install -qy ca-certificates wget unrar unzip && \
 
-# Install SickRage 0.2.1 (2014-10-22)
+# Install SickRage master
 mkdir /opt/sickrage && \
 cd /tmp && \
-wget https://github.com/SiCKRAGETV/SickRage/archive/v4.0.9.zip && \
-unzip v4.0.9.zip && \
-mv SickRage-4.0.9/* /opt/sickrage/ && \
+wget https://github.com/SiCKRAGETV/SickRage/archive/master.zip && \
+unzip master.zip && \
+mv SickRage-master/* /opt/sickrage/ && \
 chown -R nobody:users /opt/sickrage && \
 
 # clean up
