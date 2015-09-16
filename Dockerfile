@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.16
-MAINTAINER needo <needo@superhero.org>
+MAINTAINER okachobi<okachobi@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Set correct environment variables
