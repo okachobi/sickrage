@@ -25,7 +25,7 @@ apt-get install -qy ca-certificates wget unrar unzip && \
 # Install SickRage master
 mkdir /opt/sickrage && \
 cd /tmp && \
-wget https://github.com/SiCKRAGETV/SickRage/archive/master.zip && \
+wget https://github.com/SickRage/SickRage/archive/master.zip && \
 unzip master.zip && \
 mv SickRage-master/* /opt/sickrage/ && \
 chown -R nobody:users /opt/sickrage && \
@@ -58,3 +58,4 @@ RUN chmod +x /etc/my_init.d/edge.sh
 RUN mkdir /etc/service/sickrage
 ADD sickrage.sh /etc/service/sickrage/run
 RUN chmod +x /etc/service/sickrage/run
+
