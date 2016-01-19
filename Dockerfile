@@ -25,7 +25,7 @@ apt-get install -qy ca-certificates wget unrar unzip && \
 # Install SickRage master
 mkdir /opt/sickrage && \
 cd /tmp && \
-wget https://github.com/SickRage/SickRage/archive/master.zip && \
+wget --no-check-certificate https://github.com/SickRage/SickRage/archive/master.zip && \
 unzip master.zip && \
 mv SickRage-master/* /opt/sickrage/ && \
 chown -R nobody:users /opt/sickrage && \
